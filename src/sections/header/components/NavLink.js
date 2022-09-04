@@ -1,11 +1,10 @@
 import React from 'react';
+import Link from '../../../components/Link';
 
 const NavLink = ({ link, text }) => {
   return (
     <li className="nav__item">
-      <a className="nav__link" href={link}>
-        {text}
-      </a>
+      <Link className="nav__link" link={link} text={text} />
     </li>
   );
 };
