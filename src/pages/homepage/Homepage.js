@@ -2,9 +2,9 @@ import Header from '../../sections/header/Header';
 
 const Homepage = ({ cartCount }) => {
   return (
-    <div className="homepage">
+    <main className="homepage">
       <Header cartCount={cartCount} />
-    </div>
+    </main>
   );
 };
 
