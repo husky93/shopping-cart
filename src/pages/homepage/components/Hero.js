@@ -15,7 +15,13 @@ const Hero = () => {
       <div className="hero__content">
         <Text
           tag="h2"
-          text={`The Best Bonsai Trees in the World`}
+          text={[
+            'The Best ',
+            <span className="text--higlighted" key="hero-heading-highlighted">
+              Bonsai Trees
+            </span>,
+            ' in the World',
+          ]}
           className="hero__heading"
         />
         <Text
