@@ -10,12 +10,7 @@ describe('Footer', () => {
   });
   it('has a creator contribution', () => {
     render(<Footer />);
-    const text = screen.getByText(/created by/i);
+    const text = screen.getByText(/©/i);
     expect(text).toBeInTheDocument();
-  });
-  it('has 6 links', () => {
-    render(<Footer />);
-    const links = screen.queryAllByRole('link');
-    expect(links.length).toBe(5);
   });
 });
