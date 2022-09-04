@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Header from '../Header';
 import '@testing-library/jest-dom';
 
-describe('Product', () => {
+describe('Header', () => {
   it('renders a header element', () => {
     render(<Header />);
     const header = screen.getByRole('banner');
