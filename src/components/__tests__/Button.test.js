@@ -17,7 +17,7 @@ describe('Button', () => {
 
   it('calls the provided callback function', () => {
     const onClickMock = jest.fn();
-    render(<Button onClick={onClickMock} text={text} className="btn" />);
+    render(<Button handleClick={onClickMock} text={text} className="btn" />);
     const btn = screen.getByRole('button', { name: /test/i });
 
     userEvent.click(btn);
