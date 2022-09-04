@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import NavLink from '../components/NavLink';
+import '@testing-library/jest-dom';
 
 const navLink = '/shop';
 const text = 'Shop';
