@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from '../../../components/Link';
+import Link from './Link';
 
 const NavLink = ({ link, text }) => {
   return (
