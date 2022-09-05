@@ -8,7 +8,7 @@ const Info = () => {
     <section className="info" aria-label="Info">
       <div className="content info__content">
         <div className="container info__container info__container--left">
-          <img alt="Bonsai tree" src={infoImage} />
+          <img alt="Bonsai tree" className="info__img" src={infoImage} />
         </div>
         <div className="container info__container info__container--right">
           <Text
