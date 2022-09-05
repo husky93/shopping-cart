@@ -5,11 +5,11 @@ import '../../../assets/styles/sections/FooterNav.css';
 const Navbar = () => {
   return (
     <ul className="footer-nav">
-      <NavLink text="Terms of Service" link="#" />
-      <NavLink text="Privacy Policy" link="#" />
-      <NavLink text="Shipping Policy" link="#" />
-      <NavLink text="Our Warranty" link="#" />
-      <NavLink text="Refund Policy" link="#" />
+      <NavLink text="Terms of Service" link="#" className="footer__link" />
+      <NavLink text="Privacy Policy" link="#" className="footer__link" />
+      <NavLink text="Shipping Policy" link="#" className="footer__link" />
+      <NavLink text="Our Warranty" link="#" className="footer__link" />
+      <NavLink text="Refund Policy" link="#" className="footer__link" />
     </ul>
   );
 };
