@@ -6,8 +6,16 @@ jest.mock('../components/Hero', () => () => (
   <section data-testid="hero"></section>
 ));
 
+jest.mock('../components/Info', () => () => (
+  <section data-testid="info"></section>
+));
+
 jest.mock('../../../sections/header/Header', () => () => (
   <header data-testid="header"></header>
+));
+
+jest.mock('../../../sections/footer/Footer', () => () => (
+  <footer data-testid="footer"></footer>
 ));
 
 describe('Homepage', () => {
@@ -25,5 +33,15 @@ describe('Homepage', () => {
     render(<Homepage />);
     const hero = screen.getByTestId('hero');
     expect(hero).toBeInTheDocument();
+  });
+  it('renders info component inside', () => {
+    render(<Homepage />);
+    const info = screen.getByTestId('info');
+    expect(info).toBeInTheDocument();
+  });
+  it('renders footer component inside', () => {
+    render(<Homepage />);
+    const footer = screen.getByTestId('footer');
+    expect(footer).toBeInTheDocument();
   });
 });
