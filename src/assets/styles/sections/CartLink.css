@@ -1,4 +1,8 @@
 .cart-link {
   text-decoration: none;
+  color: var(--color-grey);
+}
+
+.cart-link.active {
   color: var(--color-primary);
 }
