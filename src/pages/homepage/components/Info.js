@@ -1,6 +1,7 @@
 import React from 'react';
 import Text from '../../../components/Text';
 import infoImage from '../../../assets/images/info.jpg';
+import '../../../assets/styles/homepage/Info.css';
 
 const Info = () => {
   return (

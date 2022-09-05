@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Text from '../../../components/Text';
 import Button from '../../../components/Button';
+import '../../../assets/styles/homepage/Hero.css';
 
 const Hero = () => {
   const navigate = useNavigate();

@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from './Link';
+import '../assets/styles/components/NavLink.css';
 
 const NavLink = ({ link, text }) => {
   return (

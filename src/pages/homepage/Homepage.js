@@ -2,6 +2,7 @@ import Footer from '../../sections/footer/Footer';
 import Header from '../../sections/header/Header';
 import Hero from './components/Hero';
 import Info from './components/Info';
+import '../../assets/styles/homepage/Homepage.css';
 
 const Homepage = ({ cartCount }) => {
   return (

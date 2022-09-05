@@ -2,6 +2,7 @@ import React from 'react';
 import Text from '../../components/Text';
 import Link from '../../components/Link';
 import FooterNav from './components/FooterNav';
+import '../../assets/styles/sections/Footer.css';
 
 const Footer = () => {
   const githubLink = (

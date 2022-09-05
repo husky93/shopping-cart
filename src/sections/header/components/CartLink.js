@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactComponent as CartIcon } from '../../../assets/icons/shopping-cart.svg';
+import '../../../assets/styles/sections/CartLink.css';
 
 const CartLink = ({ link, cartCount }) => {
   return (
