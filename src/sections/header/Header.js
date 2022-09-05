@@ -7,9 +7,11 @@ import '../../assets/styles/sections/Header.css';
 const Header = ({ cartCount }) => {
   return (
     <header className="header">
-      <Logo text="Bonsai" />
-      <Navbar />
-      <CartLink cartCount={cartCount} link="/cart" />
+      <div className="content header__content">
+        <Logo text="Bonsai" />
+        <Navbar />
+        <CartLink cartCount={cartCount} link="/cart" />
+      </div>
     </header>
   );
 };

@@ -15,8 +15,10 @@ const Footer = () => {
   );
   return (
     <footer className="footer">
-      <Text text={['© ', githubLink, ' 2022']} tag="span" />
-      <FooterNav />
+      <div className="content footer__content">
+        <Text text={['© ', githubLink, ' 2022']} tag="span" />
+        <FooterNav />
+      </div>
     </footer>
   );
 };

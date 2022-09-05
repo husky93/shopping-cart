@@ -13,7 +13,7 @@ const Hero = () => {
 
   return (
     <section className="hero" aria-label="Hero">
-      <div className="hero__content">
+      <div className="content hero__content">
         <Text
           tag="h2"
           text={[
