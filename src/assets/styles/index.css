@@ -1,5 +1,7 @@
 :root {
   --color-primary: #5DA271;
+  --color-primary-hover: #4E8A5F;
+  --color-primary-active: #396345;
   --color-secondary: #A3333D;
   --color-grey: #898989;
   --bg-color: #e3e3e3;

@@ -18,7 +18,10 @@ const Hero = () => {
           tag="h2"
           text={[
             'The Best ',
-            <span className="text--higlighted" key="hero-heading-highlighted">
+            <span
+              className="text--highlighted hero-text--highlighted"
+              key="hero-heading-highlighted"
+            >
               Bonsai Trees
             </span>,
             ' in the World',
@@ -32,7 +35,7 @@ const Hero = () => {
         />
         <Button
           handleClick={handleClick}
-          text="Find Your Tree"
+          text={<span>Find Your Tree</span>}
           className="btn btn--primary"
         />
       </div>
