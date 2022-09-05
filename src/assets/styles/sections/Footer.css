@@ -1,3 +1,29 @@
 .footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 38px 24px;
+  gap: 12px;
+}
+
+.footer__content span {
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.author {
+  color: var(--color-secondary);
+}
+
+@media (min-width: 768px) {
+  .footer__content {
+    display: flex;
+    flex-direction: row;
+    gap: 0
+  }
+  .footer__content span {
+    padding: 0 12px;
+    border-right: 1px var(--color-grey) solid;
+  }
 }
