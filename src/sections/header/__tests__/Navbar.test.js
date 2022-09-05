@@ -2,6 +2,10 @@ import { render, screen } from '@testing-library/react';
 import Navbar from '../components/Navbar';
 import '@testing-library/jest-dom';
 
+jest.mock('react-router-dom', () => ({
+  NavLink: () => <a href="/">Test</a>,
+}));
+
 describe('Navbar', () => {
   it('renders a navbar', () => {
     render(<Navbar />);
@@ -17,7 +21,7 @@ describe('Navbar', () => {
     const links = screen.queryAllByRole('link');
 
     expect(links.length).toBe(2);
-    expect(links[0].textContent).toBe('Home');
-    expect(links[1].textContent).toBe('Shop');
+    expect(links[0].textContent).toBe('Test');
+    expect(links[1].textContent).toBe('Test');
   });
 });

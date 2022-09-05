@@ -1,17 +1,14 @@
 import React from 'react';
 import Text from '../../components/Text';
-import Link from '../../components/Link';
+import { Link } from 'react-router-dom';
 import FooterNav from './components/FooterNav';
 import '../../assets/styles/sections/Footer.css';
 
 const Footer = () => {
   const githubLink = (
-    <Link
-      link="https://github.com/husky93"
-      className="author"
-      text="husky93"
-      key="author"
-    />
+    <Link to="https://github.com/husky93" className="author" key="author">
+      husky93
+    </Link>
   );
   return (
     <footer className="footer">

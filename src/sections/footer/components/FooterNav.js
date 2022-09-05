@@ -1,15 +1,35 @@
 import React from 'react';
-import NavLink from '../../../components/NavLink';
+import { NavLink } from 'react-router-dom';
 import '../../../assets/styles/sections/FooterNav.css';
 
 const Navbar = () => {
   return (
     <ul className="footer-nav">
-      <NavLink text="Terms of Service" link="#" className="footer__link" />
-      <NavLink text="Privacy Policy" link="#" className="footer__link" />
-      <NavLink text="Shipping Policy" link="#" className="footer__link" />
-      <NavLink text="Our Warranty" link="#" className="footer__link" />
-      <NavLink text="Refund Policy" link="#" className="footer__link" />
+      <li className="nav__item">
+        <NavLink to="/" className="nav__link--footer">
+          Terms of Service
+        </NavLink>
+      </li>
+      <li className="nav__item">
+        <NavLink to="/" className="nav__link--footer">
+          Privacy Policy
+        </NavLink>
+      </li>
+      <li className="nav__item">
+        <NavLink to="/" className="nav__link--footer">
+          Shipping Policy
+        </NavLink>
+      </li>
+      <li className="nav__item">
+        <NavLink to="/" className="nav__link--footer">
+          Our Warranty
+        </NavLink>
+      </li>
+      <li className="nav__item">
+        <NavLink to="/" className="nav__link--footer">
+          Refund Policy
+        </NavLink>
+      </li>
     </ul>
   );
 };
