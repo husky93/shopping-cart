@@ -1,6 +1,12 @@
+.cart-link__wrapper {
+  text-align: end;
+}
+
 .cart-link {
+  width: 50px;
   text-decoration: none;
   color: var(--color-grey);
+  flex-basis: 50px;
 }
 
 .cart-link.active {

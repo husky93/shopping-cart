@@ -1,0 +1,29 @@
+.products__content {
+  padding: 24px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.products__wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+
+.products__heading {
+  font-size: 28px;;
+}
+
+@media (min-width: 992px) {
+  .products__content {
+    padding: 128px 0 24px 0;
+  }
+.products__wrapper{
+  align-items: center;
+}
+}

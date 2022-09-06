@@ -5,6 +5,10 @@
   padding: 38px 24px;
 }
 
+.header__content > * {
+  flex: 1;
+}
+
 @media (min-width: 992px) {
   .header {
     z-index: 999;
