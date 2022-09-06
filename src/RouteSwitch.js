@@ -29,8 +29,6 @@ const RouteSwitch = () => {
       return { ...item };
     });
 
-    console.log(product);
-    console.log(newCart);
     const isAlreadyInCart = newCart.find((item) => item.id === id);
     if (isAlreadyInCart) {
       isAlreadyInCart.count = isAlreadyInCart.count + 1;
@@ -40,18 +38,26 @@ const RouteSwitch = () => {
     }
     setCart(newCart);
     setCartCount(cartCount + 1);
-    console.log(cart, cartCount);
   };
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/shop" element={<Shop products={products} />} />
+        <Route path="/" element={<Homepage cartCount={cartCount} />} />
+        <Route path="/cart" element={<Cart cartCount={cartCount} />} />
+        <Route
+          path="/shop"
+          element={<Shop cartCount={cartCount} products={products} />}
+        />
         <Route
           path="/product/:id"
-          element={<Product products={products} addToCart={addToCart} />}
+          element={
+            <Product
+              cartCount={cartCount}
+              addToCart={addToCart}
+              products={products}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>

@@ -1,5 +1,27 @@
 .cart-link__wrapper {
-  text-align: end;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-link__content {
+  position: relative;
+}
+
+.cart-link__counter {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-secondary);
+  color: var(--bg-color);
+  width: 18px;
+  height: 18px;
+  border-radius: 16px;
+  text-align: center;
+  font-size: 10px;
+  font-weight: 600;
+  right: -10px;
+  top: -12px;
 }
 
 .cart-link {

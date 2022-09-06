@@ -3,10 +3,10 @@ import Footer from '../../sections/footer/Footer';
 
 const Cart = ({ cartCount }) => {
   return (
-    <div className="cart">
+    <main className="cart">
       <Header cartCount={cartCount} />
       <Footer />
-    </div>
+    </main>
   );
 };
 
