@@ -7,7 +7,7 @@ const Button = ({ handleClick, text, className, productId, count }) => {
       onClick={handleClick}
       className={className}
       data-product={productId}
-      data-count={productId}
+      data-count={count}
     >
       {text}
     </button>

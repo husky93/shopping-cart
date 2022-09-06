@@ -3,11 +3,13 @@ import Header from '../../sections/header/Header';
 import Footer from '../../sections/footer/Footer';
 import Text from '../../components/Text';
 import Button from '../../components/Button';
+import Counter from '../../components/Counter';
 import { useParams } from 'react-router-dom';
 
 const Product = ({ products, addToCart, cartCount }) => {
   const [product, setProduct] = useState(null);
   const [imgSrc, setImgSrc] = useState('');
+  const [count, setCount] = useState(1);
   const params = useParams();
 
   useEffect(() => {
@@ -23,6 +25,18 @@ const Product = ({ products, addToCart, cartCount }) => {
       importImage();
     }
   }, [params.id, products, product]);
+
+  const handleIncrement = () => {
+    if (count < 10) {
+      setCount(count + 1);
+    }
+  };
+
+  const handleDecrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+    }
+  };
 
   if (!product) {
     return (
@@ -56,11 +70,21 @@ const Product = ({ products, addToCart, cartCount }) => {
               className="btn btn--primary"
               handleClick={addToCart}
               productId={params.id}
+              count={count}
               text={
-                <span key="add-to-cart" data-product={params.id}>
+                <span
+                  key="add-to-cart"
+                  data-product={params.id}
+                  data-count={count}
+                >
                   Add to cart
                 </span>
               }
+            />
+            <Counter
+              count={count}
+              handleIncrement={handleIncrement}
+              handleDecrement={handleDecrement}
             />
           </div>
         </div>

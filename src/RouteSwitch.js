@@ -39,8 +39,9 @@ const RouteSwitch = () => {
       product.count = count;
       newCart = [...newCart, product];
     }
+    console.log(count);
     setCart(newCart);
-    setCartCount(cartCount + 1);
+    setCartCount(cartCount + count);
   };
 
   return (
