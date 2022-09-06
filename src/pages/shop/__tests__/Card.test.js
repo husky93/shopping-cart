@@ -1,56 +1,68 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import Card from '../components/Card';
 import '@testing-library/jest-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
+import { createMemoryHistory } from 'history';
 
 const id = '0';
 const text = 'Test text';
 const description = 'Test description';
 const price = '23$';
-const image = 'test.jpg';
+const image = 'product-1.jpg';
 
 describe('Card', () => {
-  it('renders products section', () => {
+  it('renders products section', async () => {
     render(
       <Router>
-        <Card />
+        <Card text={text} description={description} price={price} img={image} />
       </Router>
     );
-    const card = screen.getByRole('figure');
-    expect(card).toBeInTheDocument();
+    await act(async () => {
+      const card = await screen.findByRole('figure');
+      expect(card).toBeInTheDocument();
+    });
   });
-  it('has an image', () => {
+  it('has an image', async () => {
     render(
       <Router>
-        <Card img={image} />
+        <Card text={text} description={description} price={price} img={image} />
       </Router>
     );
-    const img = screen.getByRole('img');
-    expect(img).toBeInTheDocument();
+
+    await act(async () => {
+      const img = await screen.findByRole('img');
+      expect(img).toBeInTheDocument();
+    });
   });
-  it('renders provided text, description and price', () => {
+  it('renders provided text, description and price', async () => {
     render(
       <Router>
-        <Card text={text} description={description} price={price} />
+        <Card text={text} description={description} price={price} img={image} />
       </Router>
     );
-    const textNode = screen.getByText('Test text');
-    const descNode = screen.getByText('Test description');
-    const priceNode = screen.getByText('23$');
+
+    const textNode = await screen.findByText('Test text');
+    const descNode = await screen.findByText('Test description');
+    const priceNode = await screen.findByText('23$');
 
     expect(textNode).toBeInTheDocument();
     expect(descNode).toBeInTheDocument();
     expect(priceNode).toBeInTheDocument();
   });
-  it('card redirects user to correct page when clicked', () => {
+  it('card redirects user to correct page when clicked', async () => {
+    const history = createMemoryHistory();
+
     render(
-      <Router>
-        <Card id={id} />
+      <Router history={history}>
+        <Card id={id} img={image} />
       </Router>
     );
-    const card = screen.getByRole('link');
+    let card;
+    await act(async () => {
+      card = await screen.findByRole('link');
+    });
     userEvent.click(card);
-    expect(global.window.location.href).toContain('/products/0');
+    expect(global.window.location.href).toContain('/product/0');
   });
 });

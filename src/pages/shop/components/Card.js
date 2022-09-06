@@ -13,10 +13,10 @@ const Card = ({ id, text, description, price, img }) => {
       setImgSrc(image);
     };
     importImage();
-  }, [img]);
+  }, []);
 
   return (
-    <Link to={`/products/${id}`} className="card__wrapper">
+    <Link to={`/product/${id}`} className="card__wrapper">
       <figure className="card">
         <img className="card__image" alt={text} src={imgSrc} />
         <div className="card__overlay">
