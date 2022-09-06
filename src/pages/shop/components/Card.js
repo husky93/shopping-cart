@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import '../../../assets/styles/shop/Card.css';
 
 const Card = ({ id, text, description, price, img }) => {
   const [imgSrc, setImgSrc] = useState('');
