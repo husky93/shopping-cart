@@ -45,6 +45,22 @@
   transform: scaleX(1);
 }
 
+.btn--count {
+  padding: 6px 14px;
+  color: var(--bg-color);
+  background-color: var(--color-grey);
+  border: 2px #adadad solid;
+}
+
+.btn--count:hover {
+  background-color: #adadad;
+}
+
+.btn--count:active {
+
+}
+
+
 @media (min-width: 768px) {
   .btn {
     font-size: 18px;

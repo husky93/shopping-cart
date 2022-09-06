@@ -5,6 +5,7 @@ import Text from '../../components/Text';
 import Button from '../../components/Button';
 import Counter from '../../components/Counter';
 import { useParams } from 'react-router-dom';
+import '../../assets/styles/product/Product.css';
 
 const Product = ({ products, addToCart, cartCount }) => {
   const [product, setProduct] = useState(null);
@@ -55,17 +56,37 @@ const Product = ({ products, addToCart, cartCount }) => {
       <main className="product">
         <Header cartCount={cartCount} />
         <div className="content product__content">
-          <div className="product__container">
-            <img src={imgSrc} alt={product.text} />
+          <div className="product__container product__gallery">
+            <img src={imgSrc} alt={product.text} className="product__img" />
           </div>
-          <div className="product__container">
-            <Text className="product__heading" tag="h2" text={product.text} />
+          <div className="product__container product__info">
+            <Text
+              className="product__heading text--highlighted"
+              tag="h2"
+              text={product.text}
+            />
             <Text
               className="product__description"
               tag="p"
               text={product.description}
             />
-            <Text className="product__price" tag="span" text={product.price} />
+            <Text
+              className="product__price"
+              tag="span"
+              text={[
+                'Price: ',
+                <span key="product-price">{product.price}</span>,
+              ]}
+            />
+            <div className="counter__container">
+              <Text className="product__price" tag="p" text={['Quantity: ']} />
+              <Counter
+                count={count}
+                handleIncrement={handleIncrement}
+                handleDecrement={handleDecrement}
+              />
+            </div>
+
             <Button
               className="btn btn--primary"
               handleClick={addToCart}
@@ -80,11 +101,6 @@ const Product = ({ products, addToCart, cartCount }) => {
                   Add to cart
                 </span>
               }
-            />
-            <Counter
-              count={count}
-              handleIncrement={handleIncrement}
-              handleDecrement={handleDecrement}
             />
           </div>
         </div>

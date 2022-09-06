@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from './Button';
 import Text from './Text';
+import '../assets/styles/components/Counter.css';
 
 const Counter = ({ handleIncrement, handleDecrement, count }) => {
   return (
