@@ -1,7 +1,6 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, act } from '@testing-library/react';
 import Product from '../Product';
 import '@testing-library/jest-dom';
-import { createMemoryHistory } from 'history';
 import { Route, MemoryRouter, Routes } from 'react-router-dom';
 
 const products = [
@@ -16,7 +15,7 @@ const products = [
 ];
 
 describe('Product', () => {
-  it('renders product section', () => {
+  it('renders product section', async () => {
     render(
       <MemoryRouter initialEntries={['/product/0']}>
         <Routes>
@@ -27,10 +26,12 @@ describe('Product', () => {
         </Routes>
       </MemoryRouter>
     );
-    const section = screen.getByRole('main');
-    expect(section).toBeInTheDocument();
+    await act(async () => {
+      const section = await screen.findByRole('main');
+      expect(section).toBeInTheDocument();
+    });
   });
-  it('renders error when wrong product route specified', () => {
+  it('renders error when wrong product route specified', async () => {
     render(
       <MemoryRouter initialEntries={['/product/5']}>
         <Routes>
@@ -41,10 +42,13 @@ describe('Product', () => {
         </Routes>
       </MemoryRouter>
     );
-    const heading = screen.getByText('ERROR 404 PRODUCT NOT FOUND');
-    expect(heading).toBeInTheDocument();
+
+    await act(async () => {
+      const heading = await screen.findByText('ERROR 404 PRODUCT NOT FOUND');
+      expect(heading).toBeInTheDocument();
+    });
   });
-  it('renders product page when correct product path', () => {
+  it('renders product page when correct product path', async () => {
     render(
       <MemoryRouter initialEntries={['/product/0']}>
         <Routes>
@@ -55,7 +59,11 @@ describe('Product', () => {
         </Routes>
       </MemoryRouter>
     );
-    const heading = screen.getByRole('heading', { name: 'Red Bonsai Tree' });
-    expect(heading).toBeInTheDocument();
+    await act(async () => {
+      const heading = await screen.findByRole('heading', {
+        name: 'Red Bonsai Tree',
+      });
+      expect(heading).toBeInTheDocument();
+    });
   });
 });
