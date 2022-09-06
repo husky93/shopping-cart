@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import Product from '../Product';
 import '@testing-library/jest-dom';
 import { createMemoryHistory } from 'history';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Route, MemoryRouter, Routes } from 'react-router-dom';
 
 const products = [
   {
@@ -18,22 +18,44 @@ const products = [
 describe('Product', () => {
   it('renders product section', () => {
     render(
-      <Router>
-        <Product products={products} />
-      </Router>
+      <MemoryRouter initialEntries={['/product/0']}>
+        <Routes>
+          <Route
+            path="/product/:id"
+            element={<Product products={products} />}
+          />
+        </Routes>
+      </MemoryRouter>
     );
     const section = screen.getByRole('main');
     expect(section).toBeInTheDocument();
   });
   it('renders error when wrong product route specified', () => {
-    const history = createMemoryHistory();
-    history.push('/product/5');
     render(
-      <Router history={history}>
-        <Product products={products} />
-      </Router>
+      <MemoryRouter initialEntries={['/product/5']}>
+        <Routes>
+          <Route
+            path="/product/:id"
+            element={<Product products={products} />}
+          />
+        </Routes>
+      </MemoryRouter>
     );
     const heading = screen.getByText('ERROR 404 PRODUCT NOT FOUND');
+    expect(heading).toBeInTheDocument();
+  });
+  it('renders product page when correct product path', () => {
+    render(
+      <MemoryRouter initialEntries={['/product/0']}>
+        <Routes>
+          <Route
+            path="/product/:id"
+            element={<Product products={products} />}
+          />
+        </Routes>
+      </MemoryRouter>
+    );
+    const heading = screen.getByRole('heading', { name: 'Red Bonsai Tree' });
     expect(heading).toBeInTheDocument();
   });
 });
