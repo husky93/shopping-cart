@@ -16,8 +16,8 @@ describe('Counter', () => {
   });
   it('calls the increment and decrement handlers', () => {
     let count = 0;
-    const handleIncrement = jest.fn(count++);
-    const handleDecrement = jest.fn(count--);
+    const handleIncrement = jest.fn();
+    const handleDecrement = jest.fn();
     render(
       <Counter
         count={count}

@@ -24,6 +24,9 @@ const RouteSwitch = () => {
 
   const addToCart = (event) => {
     const id = event.target.dataset.product;
+    let count = event.target.dataset.count
+      ? parseInt(event.target.dataset.count, 10)
+      : 1;
     const product = { ...products.find((prod) => prod.id === id) };
     let newCart = cart.map((item) => {
       return { ...item };
@@ -31,9 +34,9 @@ const RouteSwitch = () => {
 
     const isAlreadyInCart = newCart.find((item) => item.id === id);
     if (isAlreadyInCart) {
-      isAlreadyInCart.count = isAlreadyInCart.count + 1;
+      isAlreadyInCart.count = isAlreadyInCart.count + count;
     } else {
-      product.count = 1;
+      product.count = count;
       newCart = [...newCart, product];
     }
     setCart(newCart);
