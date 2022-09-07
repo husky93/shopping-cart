@@ -6,24 +6,32 @@ const textA = 'Bonsai';
 const image = 'product-2.jpg';
 
 describe('Cart Item', () => {
-  it('renders cart item', () => {
+  it('renders cart item', async () => {
     render(<CartItem img={image} />);
-    const cartItem = screen.getByRole('listitem');
-    expect(cartItem).toBeInTheDocument();
+    await act(async () => {
+      const cartItem = await screen.findByRole('listitem');
+      expect(cartItem).toBeInTheDocument();
+    });
   });
-  it('has a text', () => {
+  it('has a text', async () => {
     render(<CartItem img={image} text={textA} />);
-    const text = screen.getByText('Bonsai');
-    expect(text).toBeInTheDocument();
+    await act(async () => {
+      const text = await screen.findByText('Bonsai');
+      expect(text).toBeInTheDocument();
+    });
   });
-  it('has an image', () => {
+  it('has an image', async () => {
     render(<CartItem img={image} />);
-    const img = screen.getByRole('img');
-    expect(img).toBeInTheDocument();
+    await act(async () => {
+      const img = await screen.findByRole('img');
+      expect(img).toBeInTheDocument();
+    });
   });
-  it('has a button', () => {
+  it('has a button', async () => {
     render(<CartItem img={image} />);
-    const button = screen.getByRole('button', { name: /delete/i });
-    expect(button).toBeInTheDocument();
+    await act(async () => {
+      const button = await screen.findByRole('button', { name: /delete/i });
+      expect(button).toBeInTheDocument();
+    });
   });
 });
