@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Text from '../../../components/Text';
 import Button from '../../../components/Button';
+import '../../../assets/styles/cart/Summary.css';
 
 const Summary = ({ cart }) => {
   const [totalPrice, setTotalPrice] = useState(0);

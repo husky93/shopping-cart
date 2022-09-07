@@ -2,6 +2,7 @@ import Header from '../../sections/header/Header';
 import Footer from '../../sections/footer/Footer';
 import CartItem from './components/CartItem';
 import Summary from './components/Summary';
+import '../../assets/styles/cart/Cart.css';
 
 const Cart = ({ cart, cartCount, decrementItemCount, incrementItemCount }) => {
   return (

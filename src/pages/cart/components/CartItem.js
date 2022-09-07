@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Text from '../../../components/Text';
 import Button from '../../../components/Button';
 import Counter from '../../../components/Counter';
+import '../../../assets/styles/cart/CartItem.css';
 
 const CartItem = ({
   count,
