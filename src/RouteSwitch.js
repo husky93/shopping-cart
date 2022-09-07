@@ -70,6 +70,17 @@ const RouteSwitch = () => {
     setCart(newCart);
   };
 
+  const deleteCartItem = (event) => {
+    const id = event.target.dataset.product;
+    let newCart = cart.filter((item) => item.id !== id);
+    const cartItemCount = newCart.reduce(
+      (prevValue, cartItem) => prevValue + cartItem.count,
+      0
+    );
+    setCart(newCart);
+    setCartCount(cartItemCount);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -82,6 +93,7 @@ const RouteSwitch = () => {
               cart={cart}
               decrementItemCount={decrementItemCount}
               incrementItemCount={incrementItemCount}
+              deleteCartItem={deleteCartItem}
             />
           }
         />

@@ -32,7 +32,7 @@ const CartItem = ({
   return (
     <div role="listitem" className="cart-item">
       <div className="cart-item__container cart-item--left">
-        <img src={imgSrc} alt={text}></img>
+        <img src={imgSrc} alt={text} className="cart-item__img"></img>
         <div className="cart-item__info">
           <Text tag="h4" text={text} className="cart-item__title" />
           <Text tag="p" text={description} className="cart-item__desc" />
