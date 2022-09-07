@@ -50,7 +50,7 @@ const RouteSwitch = () => {
       return { ...item };
     });
     const product = newCart.find((prod) => prod.id === id);
-    if (product.count < 10) {
+    if (product.count < 25) {
       product.count += 1;
       setCartCount(cartCount + 1);
     }

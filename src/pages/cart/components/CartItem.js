@@ -25,7 +25,7 @@ const CartItem = ({
       setImgSrc(image);
     };
     importImage();
-  }, []);
+  }, [img]);
 
   const totalPrice = parseInt(price, 10) * count;
 
@@ -36,6 +36,16 @@ const CartItem = ({
         <div className="cart-item__info">
           <Text tag="h4" text={text} className="cart-item__title" />
           <Text tag="p" text={description} className="cart-item__desc" />
+        </div>
+      </div>
+      <div className="cart-item__container cart-item__ui cart-item--right">
+        <div className="cart-ui__container">
+          <Counter
+            handleIncrement={handleItemIncrement}
+            handleDecrement={handleItemDecrement}
+            count={count}
+            productId={id}
+          />
           <Button
             handleClick={handleCartItemDelete}
             text="Delete"
@@ -43,14 +53,7 @@ const CartItem = ({
             productId={id}
           />
         </div>
-      </div>
-      <div className="cart-item__container cart-item--right">
-        <Counter
-          handleIncrement={handleItemIncrement}
-          handleDecrement={handleItemDecrement}
-          count={count}
-          productId={id}
-        />
+
         <Text tag="span" text={totalPrice + '$'} className="cart-item__price" />
       </div>
     </div>
