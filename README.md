@@ -18,10 +18,11 @@ Interactive Frontend of a Store. This project purpose was to practice use of [Re
 - Product page rendered based on product ID
 - Add to Cart option on every Product page
 - Quantity selector on each Product page
-- Evolving Cart Button - changes look based on state
+- Evolving Cart Button - changes look based on application state
+
 
  
-<img src="https://github.com/husky93/battleship-game/blob/main/shop.jpg?raw=true"/>
+<img src="https://github.com/husky93/storefront/blob/main/shop.jpg?raw=true"/>
 
 ### Dependencies Used:
 - [React](https://github.com/facebook/react)
