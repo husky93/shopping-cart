@@ -1,5 +1,6 @@
 .logo {
   font-family: 'Eczar', serif;
+  color: var(--color-primary);
   font-size: 32px;
   font-weight: 600;
 }

@@ -45,6 +45,11 @@
   transform: scaleX(1);
 }
 
+.btn--primary:active::before {
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--color-secondary-active);
+}
+
 .btn--count {
   padding: 6px 14px;
   color: var(--bg-color);
@@ -56,8 +61,19 @@
   background-color: #adadad;
 }
 
-.btn--count:active {
+.btn--delete {
+  background-color: transparent;
+  padding: 6px 24px;
+  color: var(--color-secondary);
+  border: 2px var(--color-grey) solid;
+}
 
+.btn--delete:hover {
+  background-color: var(--bg-color);
+}
+
+.btn--delete:active {
+  background-color: var(--color-grey);
 }
 
 

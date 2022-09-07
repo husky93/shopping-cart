@@ -1,0 +1,36 @@
+.summary {
+  background-color: var(--bg-color-light);
+  padding: 24px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px
+}
+
+.summary__group { 
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary__text {
+  font-weight: 300;
+}
+
+.summary__total {
+  border-top: 1px var(--color-grey) solid;
+}
+
+.summary__total > .summary__text  {
+  font-weight: 600;
+}
+
+@media (min-width: 576px) {
+
+}
+
+@media (min-width: 992px) {
+  .summary {
+    margin-top: 0;
+  }
+}
