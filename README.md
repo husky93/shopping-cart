@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# storefront
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Interactive Frontend of a Store. This project purpose was to practice use of [React](https://github.com/facebook/react) along with [react-router](https://github.com/remix-run/react-router) and [testing-library](https://testing-library.com/) which was used for components testing. Tests were run with a help of [jest](https://jestjs.io/) JavaScript Testing Framework. [BEM](http://getbem.com/) was used in this project a CSS naming methodology.
 
-## Available Scripts
+**Live: [click here](https://husky93.github.io/storefront)**
 
-In the project directory, you can run:
+## Features
+- Fully responsive
+- Made with use of Mobile First methodology
+- React based
+- React-router integration for application routing
+- Interactive cart:
+  - Add items to cart
+  - Delete items from cart
+  - Change item quantity
+  - Show total price dynamically
+- Products inside Shop page generated based on fetched data
+- Product page rendered based on product ID
+- Add to Cart option on every Product page
+- Quantity selector on each Product page
+- Evolving Cart Button - changes look based on state
 
-### `npm start`
+ 
+<img src="https://github.com/husky93/battleship-game/blob/main/shop.jpg?raw=true"/>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Dependencies Used:
+- [React](https://github.com/facebook/react)
+- [React-DOM](https://github.com/facebook/react/tree/main/packages/react-dom)
+- [react-router-dom](https://github.com/remix-run/react-router)
+- [testing-library](https://github.com/testing-library)
+- [history](https://github.com/remix-run/history)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### Dev dependencies:
+- [create-react-app](https://github.com/facebook/create-react-app)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Assets used:
+All graphics used in this project were generated by [midhourney](https://www.midjourney.com/home/) AI.
