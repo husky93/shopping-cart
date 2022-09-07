@@ -44,11 +44,47 @@ const RouteSwitch = () => {
     setCartCount(cartCount + count);
   };
 
+  const incrementItemCount = (event) => {
+    const id = event.target.dataset.product;
+    let newCart = cart.map((item) => {
+      return { ...item };
+    });
+    const product = newCart.find((prod) => prod.id === id);
+    if (product.count < 10) {
+      product.count += 1;
+      setCartCount(cartCount + 1);
+    }
+    setCart(newCart);
+  };
+
+  const decrementItemCount = (event) => {
+    const id = event.target.dataset.product;
+    let newCart = cart.map((item) => {
+      return { ...item };
+    });
+    const product = newCart.find((prod) => prod.id === id);
+    if (product.count > 1) {
+      product.count -= 1;
+      setCartCount(cartCount - 1);
+    }
+    setCart(newCart);
+  };
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage cartCount={cartCount} />} />
-        <Route path="/cart" element={<Cart cartCount={cartCount} />} />
+        <Route
+          path="/cart"
+          element={
+            <Cart
+              cartCount={cartCount}
+              cart={cart}
+              decrementItemCount={decrementItemCount}
+              incrementItemCount={incrementItemCount}
+            />
+          }
+        />
         <Route
           path="/shop"
           element={<Shop cartCount={cartCount} products={products} />}

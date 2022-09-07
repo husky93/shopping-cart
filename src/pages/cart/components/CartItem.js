@@ -8,9 +8,10 @@ const CartItem = ({
   text,
   img,
   price,
+  id,
   description,
-  handleCartIncrement,
-  handleCartDecrement,
+  handleItemIncrement,
+  handleItemDecrement,
   handleCartItemDelete,
 }) => {
   const [imgSrc, setImgSrc] = useState('');
@@ -25,6 +26,8 @@ const CartItem = ({
     importImage();
   }, []);
 
+  const totalPrice = parseInt(price, 10) * count;
+
   return (
     <div role="listitem" className="cart-item">
       <div className="cart-item__container cart-item--left">
@@ -36,16 +39,18 @@ const CartItem = ({
             handleClick={handleCartItemDelete}
             text="Delete"
             className="btn btn--delete"
+            productId={id}
           />
         </div>
       </div>
       <div className="cart-item__container cart-item--right">
         <Counter
-          handleIncrement={handleCartIncrement}
-          handleDecrement={handleCartDecrement}
+          handleIncrement={handleItemIncrement}
+          handleDecrement={handleItemDecrement}
           count={count}
+          productId={id}
         />
-        <Text tag="span" text={price} className="cart-item__price" />
+        <Text tag="span" text={totalPrice + '$'} className="cart-item__price" />
       </div>
     </div>
   );
