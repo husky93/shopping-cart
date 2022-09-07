@@ -31,17 +31,20 @@ const RouteSwitch = () => {
     let newCart = cart.map((item) => {
       return { ...item };
     });
-
     const isAlreadyInCart = newCart.find((item) => item.id === id);
-    if (isAlreadyInCart) {
+    const isTooMuch = isAlreadyInCart
+      ? isAlreadyInCart.count + count > 10
+      : false;
+    if (isAlreadyInCart && !isTooMuch) {
       isAlreadyInCart.count = isAlreadyInCart.count + count;
-    } else {
+      setCartCount(cartCount + count);
+    } else if (!isAlreadyInCart) {
       product.count = count;
       newCart = [...newCart, product];
+      setCartCount(cartCount + count);
     }
-    console.log(count);
+
     setCart(newCart);
-    setCartCount(cartCount + count);
   };
 
   const incrementItemCount = (event) => {
@@ -50,7 +53,7 @@ const RouteSwitch = () => {
       return { ...item };
     });
     const product = newCart.find((prod) => prod.id === id);
-    if (product.count < 25) {
+    if (product.count < 10) {
       product.count += 1;
       setCartCount(cartCount + 1);
     }
