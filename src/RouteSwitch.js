@@ -14,7 +14,16 @@ const RouteSwitch = () => {
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+    if (products.length > 0) {
+      products.forEach(async (product) => {
+        const image = await import(`./assets/images/${product.img}`).then(
+          (module) => module.default
+        );
+        new Image().src = image;
+        console.log(product.img);
+      });
+    }
+  }, [products]);
 
   const fetchProducts = async () => {
     let data;
