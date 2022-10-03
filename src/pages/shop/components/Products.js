@@ -1,6 +1,7 @@
 import React from 'react';
-import Card from './Card';
 import '../../../assets/styles/shop/Products.css';
+
+const Card = React.lazy(() => import('./Card'));
 
 const Products = ({ products }) => {
   return (
