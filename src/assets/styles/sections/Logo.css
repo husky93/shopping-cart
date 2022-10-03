@@ -1,6 +1,11 @@
 .logo {
   font-family: 'Eczar', serif;
   color: var(--color-primary);
-  font-size: 32px;
+  font-size: 36px;
   font-weight: 600;
+  text-decoration: none;
+}
+
+.logo__link {
+  text-decoration: none;
 }
