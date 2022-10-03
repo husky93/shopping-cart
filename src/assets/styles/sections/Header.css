@@ -5,10 +5,15 @@
   padding: 38px 24px;
 }
 
+.sticky {
+  position: sticky;
+}
+
+
 @media (min-width: 992px) {
   .header {
     z-index: 999;
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     width: 100%;

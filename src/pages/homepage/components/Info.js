@@ -1,11 +1,17 @@
 import React from 'react';
+import { useObserver } from '../../../app/hooks';
 import Text from '../../../components/Text';
 import infoImage from '../../../assets/images/info.webp';
 import '../../../assets/styles/homepage/Info.css';
 
 const Info = () => {
+  const { isVisible, containerRef } = useObserver();
   return (
-    <section className="info" aria-label="Info">
+    <section
+      className={`info enter-transition ${isVisible ? 'in-viewport' : ''}`}
+      aria-label="Info"
+      ref={containerRef}
+    >
       <div className="content info__content">
         <div className="container info__container info__container--left">
           <img alt="Bonsai tree" className="info__img" src={infoImage} />

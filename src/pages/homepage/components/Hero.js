@@ -1,18 +1,24 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useObserver } from '../../../app/hooks';
 import Text from '../../../components/Text';
 import Button from '../../../components/Button';
 import '../../../assets/styles/homepage/Hero.css';
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { containerRef, isVisible } = useObserver();
 
   const handleClick = () => {
     navigate('/shop');
   };
 
   return (
-    <section className="hero" aria-label="Hero">
+    <section
+      className={`hero enter-transition ${isVisible ? 'in-viewport' : ''}`}
+      aria-label="Hero"
+      ref={containerRef}
+    >
       <div className="content hero__content">
         <Text
           tag="h2"

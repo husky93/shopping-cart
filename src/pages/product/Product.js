@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useObserver } from '../../app/hooks';
 import '../../assets/styles/product/Product.css';
 
 const Header = React.lazy(() => import('../../sections/header/Header'));
@@ -11,6 +12,7 @@ const Counter = React.lazy(() => import('../../components/Counter'));
 const Product = ({ products, addToCart, cartCount }) => {
   const [product, setProduct] = useState(null);
   const [count, setCount] = useState(1);
+  const { containerRef, isVisible } = useObserver();
   const params = useParams();
 
   useEffect(() => {
@@ -32,7 +34,10 @@ const Product = ({ products, addToCart, cartCount }) => {
 
   if (!product) {
     return (
-      <main className="product">
+      <main
+        className={`product enter-transition ${isVisible ? 'in-viewport' : ''}`}
+        ref={containerRef}
+      >
         <Header cartCount={cartCount} />
         <Text
           className="error__heading"
@@ -44,7 +49,10 @@ const Product = ({ products, addToCart, cartCount }) => {
     );
   } else {
     return (
-      <main className="product">
+      <main
+        className={`product enter-transition ${isVisible ? 'in-viewport' : ''}`}
+        ref={containerRef}
+      >
         <Header cartCount={cartCount} />
         <div className="content product__content">
           <div className="product__container product__gallery">

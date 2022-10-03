@@ -44,3 +44,17 @@ h1, h2, h3, h4, h5, p {
   max-width: var(--size-xl);
   margin: 0 auto;
 }
+
+.enter-transition {
+  transition: opacity 500ms, transform 350ms;
+  transition-delay: 200ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.58, 1);
+  opacity: 0;
+  transform: translateY(50px);
+  position: relative;
+}
+
+.in-viewport {
+  opacity: 1;
+  transform: translateY(0);
+}
