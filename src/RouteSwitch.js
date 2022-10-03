@@ -3,7 +3,7 @@ import Homepage from './pages/homepage/Homepage';
 import Cart from './pages/cart/Cart';
 import Shop from './pages/shop/Shop';
 import Product from './pages/product/Product';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 
 const RouteSwitch = () => {
   const [products, setProducts] = useState([]);
