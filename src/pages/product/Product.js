@@ -10,22 +10,12 @@ const Counter = React.lazy(() => import('../../components/Counter'));
 
 const Product = ({ products, addToCart, cartCount }) => {
   const [product, setProduct] = useState(null);
-  const [imgSrc, setImgSrc] = useState('');
   const [count, setCount] = useState(1);
   const params = useParams();
 
   useEffect(() => {
-    const importImage = async () => {
-      const image = await import(`../../assets/images/${product.img}`).then(
-        (module) => module.default
-      );
-      setImgSrc(image);
-    };
     const currentProduct = products.find((prod) => prod.id === params.id);
     setProduct(currentProduct);
-    if (product) {
-      importImage();
-    }
   }, [params.id, products, product]);
 
   const handleIncrement = () => {
@@ -58,7 +48,11 @@ const Product = ({ products, addToCart, cartCount }) => {
         <Header cartCount={cartCount} />
         <div className="content product__content">
           <div className="product__container product__gallery">
-            <img src={imgSrc} alt={product.text} className="product__img" />
+            <img
+              src={product.img}
+              alt={product.text}
+              className="product__img"
+            />
           </div>
           <div className="product__container product__info">
             <Text

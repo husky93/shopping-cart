@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Text from '../../../components/Text';
 import Button from '../../../components/Button';
 import Counter from '../../../components/Counter';
@@ -15,24 +15,12 @@ const CartItem = ({
   handleItemDecrement,
   handleCartItemDelete,
 }) => {
-  const [imgSrc, setImgSrc] = useState('');
-
-  useEffect(() => {
-    const importImage = async () => {
-      const image = await import(`../../../assets/images/${img}`).then(
-        (module) => module.default
-      );
-      setImgSrc(image);
-    };
-    importImage();
-  }, [img]);
-
   const totalPrice = parseInt(price, 10) * count;
 
   return (
     <div role="listitem" className="cart-item">
       <div className="cart-item__container cart-item--left">
-        <img src={imgSrc} alt={text} className="cart-item__img"></img>
+        <img src={img} alt={text} className="cart-item__img"></img>
         <div className="cart-item__info">
           <Text tag="h4" text={text} className="cart-item__title" />
           <Text tag="p" text={description} className="cart-item__desc" />

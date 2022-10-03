@@ -12,7 +12,7 @@ const Products = ({ products }) => {
           {products.map((prod) => (
             <Card
               id={prod.id}
-              key={'product-card-' + prod.id}
+              key={'prod-card' + prod.img}
               text={prod.text}
               description={prod.description}
               price={prod.price}

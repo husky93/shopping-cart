@@ -1,6 +1,6 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import Loading from './pages/loading/Loading';
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, useRef, Suspense } from 'react';
 
 const Homepage = React.lazy(() => import('./pages/homepage/Homepage'));
 const Cart = React.lazy(() => import('./pages/cart/Cart'));
@@ -11,18 +11,30 @@ const RouteSwitch = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
   const [cartCount, setCartCount] = useState(0);
+  const isImagesFetched = useRef(false);
 
   useEffect(() => {
     fetchProducts();
-    if (products.length > 0) {
-      products.forEach(async (product) => {
+  }, []);
+
+  useEffect(() => {
+    if (products.length > 0 && !isImagesFetched.current) {
+      const newProducts = [];
+      const productsLength = products.length;
+      products.forEach(async (product, index) => {
         const image = await import(`./assets/images/${product.img}`).then(
           (module) => module.default
         );
-        new Image().src = image;
-        console.log(product.img);
+        const img = (new Image().src = image);
+        const newProd = { ...product, img };
+        newProducts.push(newProd);
+        if (index === productsLength - 1) {
+          setProducts(newProducts);
+          isImagesFetched.current = true;
+        }
       });
     }
+    console.log(products);
   }, [products]);
 
   const fetchProducts = async () => {
