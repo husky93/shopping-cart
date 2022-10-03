@@ -1,9 +1,11 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
-import Homepage from './pages/homepage/Homepage';
-import Cart from './pages/cart/Cart';
-import Shop from './pages/shop/Shop';
-import Product from './pages/product/Product';
+import Loading from './pages/loading/Loading';
 import React, { useState, useEffect, Suspense } from 'react';
+
+const Homepage = React.lazy(() => import('./pages/homepage/Homepage'));
+const Cart = React.lazy(() => import('./pages/cart/Cart'));
+const Shop = React.lazy(() => import('./pages/shop/Shop'));
+const Product = React.lazy(() => import('./pages/product/Product'));
 
 const RouteSwitch = () => {
   const [products, setProducts] = useState([]);
@@ -86,35 +88,37 @@ const RouteSwitch = () => {
 
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Homepage cartCount={cartCount} />} />
-        <Route
-          path="/cart"
-          element={
-            <Cart
-              cartCount={cartCount}
-              cart={cart}
-              decrementItemCount={decrementItemCount}
-              incrementItemCount={incrementItemCount}
-              deleteCartItem={deleteCartItem}
-            />
-          }
-        />
-        <Route
-          path="/shop"
-          element={<Shop cartCount={cartCount} products={products} />}
-        />
-        <Route
-          path="/product/:id"
-          element={
-            <Product
-              cartCount={cartCount}
-              addToCart={addToCart}
-              products={products}
-            />
-          }
-        />
-      </Routes>
+      <Suspense fallback={<Loading cartCount={cartCount} />}>
+        <Routes>
+          <Route path="/" element={<Homepage cartCount={cartCount} />} />
+          <Route
+            path="/cart"
+            element={
+              <Cart
+                cartCount={cartCount}
+                cart={cart}
+                decrementItemCount={decrementItemCount}
+                incrementItemCount={incrementItemCount}
+                deleteCartItem={deleteCartItem}
+              />
+            }
+          />
+          <Route
+            path="/shop"
+            element={<Shop cartCount={cartCount} products={products} />}
+          />
+          <Route
+            path="/product/:id"
+            element={
+              <Product
+                cartCount={cartCount}
+                addToCart={addToCart}
+                products={products}
+              />
+            }
+          />
+        </Routes>
+      </Suspense>
     </Router>
   );
 };

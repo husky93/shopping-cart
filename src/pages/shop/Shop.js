@@ -1,7 +1,9 @@
-import Header from '../../sections/header/Header';
-import Footer from '../../sections/footer/Footer';
-import Products from './components/Products';
+import React from 'react';
 import '../../assets/styles/shop/Shop.css';
+
+const Header = React.lazy(() => import('../../sections/header/Header'));
+const Footer = React.lazy(() => import('../../sections/footer/Footer'));
+const Products = React.lazy(() => import('./components/Products'));
 
 const Shop = ({ products, cartCount }) => {
   return (

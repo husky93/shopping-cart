@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../sections/header/Header';
-import Footer from '../../sections/footer/Footer';
-import Text from '../../components/Text';
-import Button from '../../components/Button';
-import Counter from '../../components/Counter';
 import { useParams } from 'react-router-dom';
 import '../../assets/styles/product/Product.css';
+
+const Header = React.lazy(() => import('../../sections/header/Header'));
+const Footer = React.lazy(() => import('../../sections/footer/Footer'));
+const Text = React.lazy(() => import('../../components/Text'));
+const Button = React.lazy(() => import('../../components/Button'));
+const Counter = React.lazy(() => import('../../components/Counter'));
 
 const Product = ({ products, addToCart, cartCount }) => {
   const [product, setProduct] = useState(null);

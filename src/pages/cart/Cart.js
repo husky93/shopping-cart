@@ -1,9 +1,11 @@
-import Header from '../../sections/header/Header';
-import Footer from '../../sections/footer/Footer';
-import CartItem from './components/CartItem';
-import Summary from './components/Summary';
-import Text from '../../components/Text';
+import React from 'react';
 import '../../assets/styles/cart/Cart.css';
+
+const Header = React.lazy(() => import('../../sections/header/Header'));
+const Footer = React.lazy(() => import('../../sections/footer/Footer'));
+const CartItem = React.lazy(() => import('./components/CartItem'));
+const Summary = React.lazy(() => import('./components/Summary'));
+const Text = React.lazy(() => import('../../components/Text'));
 
 const Cart = ({
   cart,

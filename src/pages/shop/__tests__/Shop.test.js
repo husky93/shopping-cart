@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import Shop from '../Shop';
 import '@testing-library/jest-dom';
 
@@ -26,10 +26,12 @@ const products = [
 ];
 
 describe('Shop', () => {
-  it('renders shop component', () => {
+  it('renders shop component', async () => {
     render(<Shop products={products} />);
-    const main = screen.getByRole('main');
-    expect(main).toBeInTheDocument();
+    await waitFor(() => {
+      const main = screen.getByRole('main');
+      expect(main).toBeInTheDocument();
+    });
   });
   it('renders header component inside', () => {
     render(<Shop products={products} />);

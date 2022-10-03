@@ -1,4 +1,4 @@
-import { render, screen, act } from '@testing-library/react';
+import { render, screen, act, waitFor } from '@testing-library/react';
 import Product from '../Product';
 import '@testing-library/jest-dom';
 import { Route, MemoryRouter, Routes } from 'react-router-dom';
@@ -26,7 +26,7 @@ describe('Product', () => {
         </Routes>
       </MemoryRouter>
     );
-    await act(async () => {
+    await waitFor(async () => {
       const section = await screen.findByRole('main');
       expect(section).toBeInTheDocument();
     });
@@ -59,7 +59,7 @@ describe('Product', () => {
         </Routes>
       </MemoryRouter>
     );
-    await act(async () => {
+    await waitFor(async () => {
       const heading = await screen.findByRole('heading', {
         name: 'Red Bonsai Tree',
       });

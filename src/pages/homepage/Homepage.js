@@ -1,8 +1,10 @@
-import Footer from '../../sections/footer/Footer';
-import Header from '../../sections/header/Header';
-import Hero from './components/Hero';
-import Info from './components/Info';
+import React from 'react';
 import '../../assets/styles/homepage/Homepage.css';
+
+const Header = React.lazy(() => import('../../sections/header/Header'));
+const Footer = React.lazy(() => import('../../sections/footer/Footer'));
+const Hero = React.lazy(() => import('./components/Hero'));
+const Info = React.lazy(() => import('./components/Info'));
 
 const Homepage = ({ cartCount }) => {
   return (

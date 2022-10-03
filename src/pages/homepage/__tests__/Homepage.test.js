@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import Homepage from '../Homepage';
 import '@testing-library/jest-dom';
 
@@ -19,10 +19,12 @@ jest.mock('../../../sections/footer/Footer', () => () => (
 ));
 
 describe('Homepage', () => {
-  it('renders homepage component', () => {
+  it('renders homepage component', async () => {
     render(<Homepage />);
-    const main = screen.getByRole('main');
-    expect(main).toBeInTheDocument();
+    await waitFor(() => {
+      const main = screen.getByRole('main');
+      expect(main).toBeInTheDocument();
+    });
   });
   it('renders header component inside', () => {
     render(<Homepage />);
