@@ -34,27 +34,27 @@ const Product = ({ products, addToCart, cartCount }) => {
 
   if (!product) {
     return (
-      <main
-        className={`product enter-transition ${isVisible ? 'in-viewport' : ''}`}
-        ref={containerRef}
-      >
+      <main className="product" ref={containerRef}>
         <Header cartCount={cartCount} />
-        <Text
-          className="error__heading"
-          tag="h2"
-          text="ERROR 404 PRODUCT NOT FOUND"
-        />
+        <div className="content product__content">
+          <Text
+            className="error__heading"
+            tag="h2"
+            text="ERROR 404 PRODUCT NOT FOUND"
+          />
+        </div>
         <Footer />
       </main>
     );
   } else {
     return (
-      <main
-        className={`product enter-transition ${isVisible ? 'in-viewport' : ''}`}
-        ref={containerRef}
-      >
+      <main className="product" ref={containerRef}>
         <Header cartCount={cartCount} />
-        <div className="content product__content">
+        <div
+          className={`content product__content enter-transition ${
+            isVisible ? 'in-viewport' : ''
+          }`}
+        >
           <div className="product__container product__gallery">
             <img
               src={product.img}
