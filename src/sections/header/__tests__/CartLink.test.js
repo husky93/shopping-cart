@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import CartLink from '../components/CartLink';
 import '@testing-library/jest-dom';
 
@@ -7,7 +8,11 @@ const cartCount = 3;
 
 describe('NavLink', () => {
   it('renders a link', () => {
-    render(<CartLink link={cartLink} />);
+    render(
+      <Router>
+        <CartLink link={cartLink} />)
+      </Router>
+    );
     const link = screen.getByRole('link', { name: 'Cart' });
     const counter = screen.queryByRole('status', { name: 'Cart item counter' });
     expect(link).toBeInTheDocument();
@@ -15,7 +20,11 @@ describe('NavLink', () => {
   });
 
   it('renders a counter when cartCount prop specified', () => {
-    render(<CartLink link={cartLink} cartCount={cartCount} />);
+    render(
+      <Router>
+        <CartLink link={cartLink} cartCount={cartCount} />
+      </Router>
+    );
     const link = screen.getByRole('link', { name: 'Cart' });
     const counter = screen.getByRole('status', { name: 'Cart item counter' });
     expect(link).toBeInTheDocument();
@@ -24,7 +33,11 @@ describe('NavLink', () => {
   });
 
   it('has a correct href argument', () => {
-    render(<CartLink link={cartLink} />);
+    render(
+      <Router>
+        <CartLink link={cartLink} />
+      </Router>
+    );
     const link = screen.getByRole('link', { name: 'Cart' });
     expect(link).toHaveAttribute('href', '/cart');
   });

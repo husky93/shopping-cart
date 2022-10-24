@@ -18,6 +18,8 @@ jest.mock('../../../sections/footer/Footer', () => () => (
   <footer data-testid="footer"></footer>
 ));
 
+global.scrollTo = jest.fn();
+
 describe('Homepage', () => {
   it('renders homepage component', async () => {
     render(<Homepage />);

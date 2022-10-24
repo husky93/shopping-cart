@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import Info from '../components/Info';
 import '@testing-library/jest-dom';
+import 'intersection-observer';
 
 describe('Info', () => {
   it('renders info section', () => {

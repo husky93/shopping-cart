@@ -1,6 +1,7 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import Products from '../components/Products';
 import '@testing-library/jest-dom';
+import 'intersection-observer';
 
 jest.mock('../components/Card', () => () => (
   <figure data-testid="card"></figure>
@@ -18,10 +19,12 @@ const products = [
 ];
 
 describe('Products', () => {
-  it('renders products section', () => {
+  it('renders products section', async () => {
     render(<Products products={products} />);
-    const section = screen.getByRole('region', { name: 'Products' });
-    expect(section).toBeInTheDocument();
+    await waitFor(async () => {
+      const section = await screen.findByRole('region', { name: 'Products' });
+      expect(section).toBeInTheDocument();
+    });
   });
   it('renders products.length elements', () => {
     render(<Products products={products} />);

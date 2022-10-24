@@ -19,7 +19,7 @@ describe('Footer', () => {
         <Footer />
       </Router>
     );
-    const text = screen.getByText(/©/i);
+    const text = screen.getByText(/forged by/i);
     expect(text).toBeInTheDocument();
   });
 });

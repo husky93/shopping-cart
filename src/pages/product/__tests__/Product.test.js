@@ -2,6 +2,7 @@ import { render, screen, act, waitFor } from '@testing-library/react';
 import Product from '../Product';
 import '@testing-library/jest-dom';
 import { Route, MemoryRouter, Routes } from 'react-router-dom';
+import 'intersection-observer';
 
 const products = [
   {

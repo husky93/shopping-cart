@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Hero from '../components/Hero';
 import '@testing-library/jest-dom';
 import userEvent from '@testing-library/user-event';
+import 'intersection-observer';
 
 describe('Hero', () => {
   it('renders hero', () => {
