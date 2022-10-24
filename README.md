@@ -2,7 +2,7 @@
 
 Interactive Frontend of a Store. This project purpose was to practice use of [React](https://github.com/facebook/react) along with [react-router](https://github.com/remix-run/react-router) and [testing-library](https://testing-library.com/) which was used for components testing. Tests were run with a help of [jest](https://jestjs.io/) JavaScript Testing Framework. [BEM](http://getbem.com/) was used in this project a CSS naming methodology.
 
-**Live: [click here](https://husky93.github.io/storefront)**
+### Live: [click here](https://husky93.github.io/storefront)
 
 ## Features
 - Fully responsive
