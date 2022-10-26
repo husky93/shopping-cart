@@ -34,7 +34,6 @@ const RouteSwitch = () => {
         }
       });
     }
-    console.log(products);
   }, [products]);
 
   const fetchProducts = async () => {

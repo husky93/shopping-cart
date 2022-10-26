@@ -8,11 +8,24 @@
 @media (min-width: 992px) {
   .header {
     z-index: 999;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    background-color: rgba(227, 227, 227, 0.75);
+    transition: background-color 300ms;
+  }
+
+  .header__content{ 
+    transition: padding 300ms;
+  }
+
+  .header.scrolled {
     background-color: var(--bg-color);
+  }
+
+  .header.scrolled .header__content{
+    padding: 24px 0;
   }
 
   .header__content > * {
@@ -24,5 +37,10 @@
   .header__content {
     padding: 24px 0;
   }
+
+  .header.scrolled .header__content{
+    padding: 12px 0;
+  }
+
 }
 

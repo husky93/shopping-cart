@@ -7,7 +7,6 @@ export const useObserver = () => {
   const handleIntersection = (entries) => {
     const [entry] = entries;
     setIsVisible(entry.isIntersecting);
-    console.log(entry);
   };
 
   const options = { root: null, rootMargin: '0px', threshold: 0.1 };
