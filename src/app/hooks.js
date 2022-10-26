@@ -4,21 +4,22 @@ export const useObserver = () => {
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const handleIntersection = (entries) => {
-    const [entry] = entries;
-    setIsVisible(entry.isIntersecting);
-  };
-
-  const options = { root: null, rootMargin: '0px', threshold: 0.1 };
+  const options = { root: null, rootMargin: '0px', threshold: 0.35 };
 
   useEffect(() => {
+    const handleIntersection = (entries) => {
+      const [entry] = entries;
+      const isIntersecting = entry.isIntersecting;
+      if (isIntersecting && !isVisible) setIsVisible(entry.isIntersecting);
+    };
+
     const observer = new IntersectionObserver(handleIntersection, options);
     if (containerRef.current) observer.observe(containerRef.current);
 
     return () => {
       if (containerRef.current) observer.unobserve(containerRef.current);
     };
-  }, [containerRef, options]);
+  }, [containerRef, options, isVisible]);
 
   return { containerRef, isVisible };
 };
