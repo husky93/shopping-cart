@@ -19,6 +19,11 @@
   box-sizing: border-box;
 }
 
+main {
+ max-width: 1920px;
+ margin: 0 auto;
+}
+
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
