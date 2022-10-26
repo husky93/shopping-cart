@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/521.e7d1d5e9.chunk.css","mappings":"AAAA,MAEE,YAAa,CACb,qBAAsB,CAFtB,gBAGF","sources":["assets/styles/shop/Shop.css"],"sourcesContent":[".shop {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n}"],"names":[],"sourceRoot":""}

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/231.8562bf4c.chunk.css","mappings":"AAAA,UAEE,gBAAiB,CADjB,iBAEF","sources":["assets/styles/homepage/Homepage.css"],"sourcesContent":[".homepage {\n  position: relative;\n  min-height: 100vh;\n}"],"names":[],"sourceRoot":""}
