@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { ReactComponent as LogoSVG } from '../../../assets/images/logo.svg';
 import '../../../assets/styles/sections/Logo.css';
 
-const Logo = ({ text }) => {
+const Logo = () => {
   return (
-    <Link to="/" className="logo__link">
-      <h1 className="logo">{text}</h1>
-    </Link>
+    <div>
+      <Link to="/" className="logo__link">
+        <LogoSVG />
+      </Link>
+    </div>
   );
 };
 

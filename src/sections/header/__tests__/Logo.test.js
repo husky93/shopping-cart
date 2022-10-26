@@ -3,13 +3,17 @@ import Logo from '../components/Logo';
 import '@testing-library/jest-dom';
 
 jest.mock('react-router-dom', () => ({
-  Link: ({ children }) => <a href="/">{children}</a>,
+  Link: ({ children }) => (
+    <a href="/" data-testid="logo">
+      {children}
+    </a>
+  ),
 }));
 
 describe('Logo', () => {
   it('renders a logo heading with correct text', () => {
-    render(<Logo text="Bonsai" />);
-    const logo = screen.getByRole('heading', 'Bonsai');
+    render(<Logo />);
+    const logo = screen.getByTestId('logo');
     expect(logo).toBeInTheDocument();
   });
 });

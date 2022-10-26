@@ -8,7 +8,7 @@ const Header = ({ cartCount }) => {
   return (
     <header className="header">
       <div className="content header__content">
-        <Logo text="Bonsai" />
+        <Logo />
         <Navbar />
         <CartLink cartCount={cartCount} link="/cart" />
       </div>

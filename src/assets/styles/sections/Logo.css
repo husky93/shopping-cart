@@ -1,12 +1,7 @@
-.logo {
-  font-family: 'Eczar', serif;
-  color: var(--color-primary);
-  font-size: 36px;
-  font-weight: 600;
-  text-decoration: none;
-  line-height: 32px;
+.logo__link {
+  justify-self: flex-start;
 }
 
-.logo__link {
-  text-decoration: none;
+.logo__link svg{
+  width: 120px;
 }
