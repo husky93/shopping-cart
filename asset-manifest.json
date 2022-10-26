@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/storefront/static/css/main.704d0ea5.css",
+    "main.css": "/storefront/static/css/main.01a36b18.css",
     "main.js": "/storefront/static/js/main.58213279.js",
     "static/css/231.8562bf4c.chunk.css": "/storefront/static/css/231.8562bf4c.chunk.css",
     "static/js/231.b376dd85.chunk.js": "/storefront/static/js/231.b376dd85.chunk.js",
@@ -49,7 +49,7 @@
     "static/media/product-6.webp": "/storefront/static/media/product-6.bfdce70c6633a37a13d1.webp",
     "index.html": "/storefront/index.html",
     "static/media/shopping-cart.svg": "/storefront/static/media/shopping-cart.33ce5d1587bf4a7a971bb64d9418e125.svg",
-    "main.704d0ea5.css.map": "/storefront/static/css/main.704d0ea5.css.map",
+    "main.01a36b18.css.map": "/storefront/static/css/main.01a36b18.css.map",
     "main.58213279.js.map": "/storefront/static/js/main.58213279.js.map",
     "231.8562bf4c.chunk.css.map": "/storefront/static/css/231.8562bf4c.chunk.css.map",
     "231.b376dd85.chunk.js.map": "/storefront/static/js/231.b376dd85.chunk.js.map",
@@ -79,7 +79,7 @@
     "376.a025c290.chunk.js.map": "/storefront/static/js/376.a025c290.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.704d0ea5.css",
+    "static/css/main.01a36b18.css",
     "static/js/main.58213279.js"
   ]
 }
