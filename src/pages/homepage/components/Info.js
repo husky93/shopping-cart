@@ -18,6 +18,11 @@ const Info = () => {
         </div>
         <div className="container info__container info__container--right">
           <Text
+            tag="span"
+            text="Grown by us, specially for you."
+            className="info__inroduction"
+          />
+          <Text
             tag="h3"
             text="Decorate your house with a beautiful Bonsai Tree"
             className="info__heading text--highlighted"

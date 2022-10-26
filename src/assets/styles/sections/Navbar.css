@@ -23,7 +23,7 @@
 
 .nav__link--header {
   position: relative;
-  font-size: 17px;
+  font-size: 1.1rem;
 }
 
 .nav__link--header::after {
@@ -54,7 +54,7 @@
 }
 
 .nav__link--footer {
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 @media (min-width: 576px) {
