@@ -1,5 +1,4 @@
 import React from 'react';
-import { useObserver } from '../../app/hooks';
 import '../../assets/styles/cart/Cart.css';
 
 const Header = React.lazy(() => import('../../sections/header/Header'));
@@ -15,16 +14,10 @@ const Cart = ({
   incrementItemCount,
   deleteCartItem,
 }) => {
-  const { containerRef, isVisible } = useObserver();
   return (
     <main className="cart">
       <Header cartCount={cartCount} />
-      <div
-        className={`content cart__content enter-transition ${
-          isVisible ? 'in-viewport' : ''
-        }`}
-        ref={containerRef}
-      >
+      <div className={`content cart__content`}>
         {cart.length > 0 ? (
           <div role="list" className="cart__list">
             {cart.map((item, index) => (

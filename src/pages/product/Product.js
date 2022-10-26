@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useObserver } from '../../app/hooks';
 import '../../assets/styles/product/Product.css';
 
 const Header = React.lazy(() => import('../../sections/header/Header'));
@@ -14,7 +13,6 @@ const Product = ({ products, addToCart, cartCount }) => {
   const [product, setProduct] = useState(null);
   const [count, setCount] = useState(1);
   const [loading, setLoading] = useState(true);
-  const { containerRef, isVisible } = useObserver();
   const params = useParams();
 
   useEffect(() => {
@@ -107,15 +105,9 @@ const Product = ({ products, addToCart, cartCount }) => {
   };
 
   return (
-    <main className="product" ref={containerRef}>
+    <main className="product">
       <Header cartCount={cartCount} />
-      <div
-        className={`content product__content enter-transition ${
-          isVisible ? 'in-viewport' : ''
-        }`}
-      >
-        {renderContent()}
-      </div>
+      <div className={`content product__content`}>{renderContent()}</div>
       <Footer />
     </main>
   );
