@@ -5,6 +5,7 @@ const Header = React.lazy(() => import('../../sections/header/Header'));
 const Footer = React.lazy(() => import('../../sections/footer/Footer'));
 const Hero = React.lazy(() => import('./components/Hero'));
 const Info = React.lazy(() => import('./components/Info'));
+const About = React.lazy(() => import('./components/About'));
 
 const Homepage = ({ cartCount }) => {
   useEffect(() => {
@@ -14,6 +15,7 @@ const Homepage = ({ cartCount }) => {
     <main className="homepage">
       <Header cartCount={cartCount} />
       <Hero />
+      <About />
       <Info />
       <Footer />
     </main>

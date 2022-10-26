@@ -1,0 +1,35 @@
+.about__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 64px 24px;
+  text-align: center;
+  max-width: 724px;
+}
+
+.about__heading {
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.about__subtext {
+  font-weight: 300;
+}
+.about__inroduction {
+  color: var(--color-primary);
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: block;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+  .about__content {
+    padding: 128px 24px;
+  }
+  .about__heading {
+    font-size: 3rem;
+  }
+}
