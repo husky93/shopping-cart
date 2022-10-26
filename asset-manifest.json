@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/storefront/static/css/main.704d0ea5.css",
-    "main.js": "/storefront/static/js/main.edaa3873.js",
+    "main.js": "/storefront/static/js/main.58213279.js",
     "static/css/231.8562bf4c.chunk.css": "/storefront/static/css/231.8562bf4c.chunk.css",
     "static/js/231.b376dd85.chunk.js": "/storefront/static/js/231.b376dd85.chunk.js",
     "static/css/558.e13899fb.chunk.css": "/storefront/static/css/558.e13899fb.chunk.css",
@@ -11,7 +11,7 @@
     "static/css/384.0f1637d8.chunk.css": "/storefront/static/css/384.0f1637d8.chunk.css",
     "static/js/384.46b3eb08.chunk.js": "/storefront/static/js/384.46b3eb08.chunk.js",
     "static/js/890.1e2bf910.chunk.js": "/storefront/static/js/890.1e2bf910.chunk.js",
-    "static/js/946.d6993b8f.chunk.js": "/storefront/static/js/946.d6993b8f.chunk.js",
+    "static/js/946.abfed6cd.chunk.js": "/storefront/static/js/946.abfed6cd.chunk.js",
     "static/js/5.609eb805.chunk.js": "/storefront/static/js/5.609eb805.chunk.js",
     "static/js/835.ab63528c.chunk.js": "/storefront/static/js/835.ab63528c.chunk.js",
     "static/js/344.0fbf9599.chunk.js": "/storefront/static/js/344.0fbf9599.chunk.js",
@@ -20,7 +20,7 @@
     "static/js/875.a6779f66.chunk.js": "/storefront/static/js/875.a6779f66.chunk.js",
     "static/js/151.a66171d8.chunk.js": "/storefront/static/js/151.a66171d8.chunk.js",
     "static/js/167.b9c17cf7.chunk.js": "/storefront/static/js/167.b9c17cf7.chunk.js",
-    "static/css/919.0daa130e.chunk.css": "/storefront/static/css/919.0daa130e.chunk.css",
+    "static/css/919.cca491f9.chunk.css": "/storefront/static/css/919.cca491f9.chunk.css",
     "static/js/919.4b19087f.chunk.js": "/storefront/static/js/919.4b19087f.chunk.js",
     "static/css/91.4af64bd4.chunk.css": "/storefront/static/css/91.4af64bd4.chunk.css",
     "static/js/91.47cc8038.chunk.js": "/storefront/static/js/91.47cc8038.chunk.js",
@@ -39,8 +39,8 @@
     "static/css/376.2371a175.chunk.css": "/storefront/static/css/376.2371a175.chunk.css",
     "static/js/376.a025c290.chunk.js": "/storefront/static/js/376.a025c290.chunk.js",
     "static/media/logo.svg": "/storefront/static/media/logo.d32b5783ba93198f57134a7bb21b3786.svg",
-    "static/media/hero.webp": "/storefront/static/media/hero.f1e16063731ceea59596.webp",
     "static/media/info.webp": "/storefront/static/media/info.2f65a3a039b39338f05c.webp",
+    "static/media/hero.webp": "/storefront/static/media/hero.d9d2d05e90b57d24c36c.webp",
     "static/media/product-5.webp": "/storefront/static/media/product-5.db9fb00e10558f5950a4.webp",
     "static/media/product-4.webp": "/storefront/static/media/product-4.6434a7aa19ee567ea31b.webp",
     "static/media/product-1.webp": "/storefront/static/media/product-1.83337a53c5200f72c846.webp",
@@ -50,7 +50,7 @@
     "index.html": "/storefront/index.html",
     "static/media/shopping-cart.svg": "/storefront/static/media/shopping-cart.33ce5d1587bf4a7a971bb64d9418e125.svg",
     "main.704d0ea5.css.map": "/storefront/static/css/main.704d0ea5.css.map",
-    "main.edaa3873.js.map": "/storefront/static/js/main.edaa3873.js.map",
+    "main.58213279.js.map": "/storefront/static/js/main.58213279.js.map",
     "231.8562bf4c.chunk.css.map": "/storefront/static/css/231.8562bf4c.chunk.css.map",
     "231.b376dd85.chunk.js.map": "/storefront/static/js/231.b376dd85.chunk.js.map",
     "558.e13899fb.chunk.css.map": "/storefront/static/css/558.e13899fb.chunk.css.map",
@@ -59,7 +59,7 @@
     "411.99b9e8f7.chunk.js.map": "/storefront/static/js/411.99b9e8f7.chunk.js.map",
     "384.0f1637d8.chunk.css.map": "/storefront/static/css/384.0f1637d8.chunk.css.map",
     "384.46b3eb08.chunk.js.map": "/storefront/static/js/384.46b3eb08.chunk.js.map",
-    "919.0daa130e.chunk.css.map": "/storefront/static/css/919.0daa130e.chunk.css.map",
+    "919.cca491f9.chunk.css.map": "/storefront/static/css/919.cca491f9.chunk.css.map",
     "919.4b19087f.chunk.js.map": "/storefront/static/js/919.4b19087f.chunk.js.map",
     "91.4af64bd4.chunk.css.map": "/storefront/static/css/91.4af64bd4.chunk.css.map",
     "91.47cc8038.chunk.js.map": "/storefront/static/js/91.47cc8038.chunk.js.map",
@@ -80,6 +80,6 @@
   },
   "entrypoints": [
     "static/css/main.704d0ea5.css",
-    "static/js/main.edaa3873.js"
+    "static/js/main.58213279.js"
   ]
 }
