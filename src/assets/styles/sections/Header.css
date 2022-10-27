@@ -35,11 +35,11 @@
 
 @media (min-width: 1200px) {
   .header__content {
-    padding: 24px 0;
+    padding: 16px 0;
   }
 
   .header.scrolled .header__content{
-    padding: 12px 0;
+    padding: 4px 0;
   }
 
 }
