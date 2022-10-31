@@ -1,10 +1,14 @@
 import { useRef, useState, useEffect } from 'react';
 
-export const useObserver = () => {
+export const useObserver = (threshold) => {
   const containerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  const options = { root: null, rootMargin: '0px', threshold: 0.35 };
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: threshold || 0.35,
+  };
 
   useEffect(() => {
     const handleIntersection = (entries) => {

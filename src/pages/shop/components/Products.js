@@ -5,7 +5,7 @@ import '../../../assets/styles/shop/Products.css';
 const Card = React.lazy(() => import('./Card'));
 
 const Products = ({ products }) => {
-  const { containerRef, isVisible } = useObserver();
+  const { containerRef, isVisible } = useObserver(0.1);
   return (
     <div>
       <section
