@@ -1,2 +1,0 @@
-.cart{display:flex;flex-direction:column;min-height:100vh}.cart__content,.cart__list{display:flex;flex:1 1;flex-direction:column}.cart__list{background-color:var(--bg-color-light);gap:28px;padding:24px;width:100%}.cart__error{text-align:center}@media (min-width:576px){.cart__content{padding:24px}}@media (min-width:992px){.cart__content{align-items:flex-start;display:flex;flex-direction:row;gap:24px;padding:48px 0;width:100%}}
-/*# sourceMappingURL=558.eb8f0d8d.chunk.css.map*/
